@@ -2,8 +2,8 @@
 require "logstash/outputs/base"
 require "logstash/namespace"
 
-# An example output that does nothing.
-class LogStash::Outputs::Example < LogStash::Outputs::Base
+# An output that is a cow.
+class LogStash::Outputs::Cowsay < LogStash::Outputs::Base
   config_name "example"
 
   public
@@ -11,7 +11,7 @@ class LogStash::Outputs::Example < LogStash::Outputs::Base
   end # def register
 
   public
-  def receive(event)
-    return "Event received"
-  end # def event
-end # class LogStash::Outputs::Example
+  def multi_receive(event)
+    return "Moo!"
+  end
+end
